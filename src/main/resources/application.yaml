@@ -1,0 +1,9 @@
+manager:
+  org: spring-projects
+  repos: spring-boot, spring-boot-issues
+  githubToken: 46b1b459fd9ba6d1e0e6afec827de524bcf6e58a
+
+spring:
+  mobile:
+    devicedelegatingviewresolver:
+      enabled: true

@@ -1,0 +1,57 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.9.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+group = 'learningspringboot'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+jar {
+	baseName = 'issue-manager'
+	version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile 'org.springframework.social:spring-social-github:1.0.0.BUILD-SNAPSHOT'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mobile', version: '1.5.9.RELEASE'
+
+	compileOnly('org.projectlombok:lombok')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.9.0'
+
+
+    compile 'org.springframework.boot:spring-boot-configuration-processor'
+
+}
+
+compileJava.dependsOn(processResources)
+
+repositories {
+	mavenCentral()
+	maven {
+		url 'https://repo.spring.io/libs-snapshot'
+	}
+}
+
+task wrapper(type: Wrapper){
+	gradleVersion = '2.1'
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Opened issues</title>
+</head>
+<body>
+<p> GitHub Issues </p>
+<table>
+    <thead>
+    <tr>
+        <td>Repo</td>
+        <td>Issue</td>
+        <td>Title</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="issue : ${issues}">
+        <td th:text="${issue.getRepo()}"></td>
+        <td>
+            <a th:href="${issue.getGithubIssue().getUrl()}" target="_blank">
+                <span th:text="${issue.getGithubIssue().getNumber()}"></span>
+            </a>
+        </td>
+        <td th:text="${issue.getGithubIssue().getTitle()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
