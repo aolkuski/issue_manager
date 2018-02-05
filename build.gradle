@@ -33,7 +33,7 @@ dependencies {
 	compile 'org.springframework.social:spring-social-github:1.0.0.BUILD-SNAPSHOT'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-mobile', version: '1.5.9.RELEASE'
 
-	compileOnly('org.projectlombok:lombok')
+	compile('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 
     testCompile group: 'org.assertj', name: 'assertj-core', version: '3.9.0'
